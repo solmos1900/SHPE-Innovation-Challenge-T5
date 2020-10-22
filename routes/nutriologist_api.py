@@ -13,28 +13,13 @@ def get_blueprint():
 # app.config["DEBUG"] = True
 #Routes
 
-@NUTRIOLOGIST_API.route('/nutriologist/food/nutrition/<foodname>', methods=['GET'])
-def get_nutrition(foodname):
-    fdc_id = get_id(foodname)
+@NUTRIOLOGIST_API.route('/nutriologist/food/nutrition/<string:_foodname>', methods=['GET'])
+def get_nutrition(_foodname):
+    fdc_id = get_id(_foodname)
+    print(fdc_id)
     if fdc_id == 0:
         abort(404)
     else:
-        nutrition_label = {
-            "serving_size" : get_serving_size(fdc_id)["serving_size"],
-            "serving_size_unit": get_serving_size(fdc_id)["serving_size_unit"],
-            "calories" : get_nutrient(fdc_id, "calories"),
-            "fat" : get_nutrient(fdc_id, "fat"),
-            "saturated_fat": get_nutrient(fdc_id, "saturatedFat"),
-            "trans_fat" : get_nutrient(fdc_id, "transFat"),
-            "cholesterol" : get_nutrient(fdc_id, "cholesterol"),
-            "sodium" : get_nutrient(fdc_id, "sodium"),
-            "carbohydrates" : get_nutrient(fdc_id, "carbohydrates"),
-            "fiber" : get_nutrient(fdc_id, "fiber"),
-            "sugars" : get_nutrient(fdc_id, "sugars"),
-            "protein" : get_nutrient(fdc_id, "protein"),
-            "calcium" : get_nutrient(fdc_id, "calcium"),
-            "iron" : get_nutrient(fdc_id, "iron"),
-            "potassium" : get_nutrient(fdc_id, "potassium"),
-        }
-        
+
+        nutrition_label = get_nutrient(fdc_id)
         return json.dumps(nutrition_label)
