@@ -5,24 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Navigation from './routes/StackNavigation';
 
-// export default App = () => {
-//   return (
-//     <View style={styles.container}>
-//       {/* <Text>Wrong Page
-//       </Text>
-//      <Navigation> </Navigation>  */}
-//       {/* <Button
-//            title="Add some friends"
-//            onPress={() =>
-//              this.props.navigation.navigate('Landing')}/> */}
-         
-          
-//        {/* <Text>Text</Text>
-//       <StatusBar style="auto" />  */}
-//     </View>
-//   );
-// }
-
 export default function App() {
   return (
     <NavigationContainer>

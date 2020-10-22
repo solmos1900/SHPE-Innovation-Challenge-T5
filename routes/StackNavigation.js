@@ -55,7 +55,7 @@ export default function Navigation({ navigation }) {
       <Stack.Screen name='Landing' component={Landing} options={{ headerShown: false }} />
       <Stack.Screen name='Register' component={Register} />
       <Stack.Screen name='Login' component={LoginScreen} />
-      <Stack.Screen name='Home' component={BottomTabNav} />
+      <Stack.Screen name='Home' component={BottomTabNav} options={{ headerShown: false }} />
       <Stack.Screen name="Notification" component={NotificationScreen} />
       <Stack.Screen name="Map" component={MapScreen} />
       <Stack.Screen name="GoogleTest" component={GooglePlacesInput} />
