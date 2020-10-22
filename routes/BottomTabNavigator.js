@@ -11,7 +11,7 @@ import MapScreen from '../screens/MapScreen';
 import GooglePlacesInput from '../screens/GooglePlacesTest';  
 import MapContainer from '../screens/MapContainer';
 // import { exp } from 'react-native-reanimated';
-// import gmapsDirections from '../Screens/GoogleDirectionsTest';
+import gmapsDirections from '../screens/GoogleDirectionsTest';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -31,7 +31,7 @@ const BottomTabNav = ({ navigation, route }) => {
         }}
       />
 
-      {/* <BottomTab.Screen
+      <BottomTab.Screen
         name='Direcitons'
         component={gmapsDirections}
         options={{
@@ -40,8 +40,8 @@ const BottomTabNav = ({ navigation, route }) => {
         //     <TabBarIcon focused={focused} name='home' />
         //   )
         }}
-      /> */}
-      <BottomTab.Screen
+      />
+      {/* <BottomTab.Screen
         name='Map'
         component={MapScreen}
         options={{
@@ -50,7 +50,7 @@ const BottomTabNav = ({ navigation, route }) => {
         //     <TabBarIcon focused={focused} name='home' />
         //   )
         }}
-      />
+      /> */}
        <BottomTab.Screen
         name='MapCont'
         component={MapContainer}
