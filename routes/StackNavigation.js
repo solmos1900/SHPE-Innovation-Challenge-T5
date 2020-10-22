@@ -1,23 +1,15 @@
 import * as React from 'react';
-// import { NavigationContainer } from '@react-navigation/native';
+import { Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import Landing from '../screens/Landing/scene';
+import Register from '../screens/Register/scene';
 import LoginScreen from '../screens/Login/login';
-// import LandingScreen from '../Screen/landing';
 //import HomeScreen from '../Screen/HomeScreen';
 import NotificationScreen from '../screens/Messages/NotificationScreen';
 import MapScreen from '../screens/MapScreen';
-import BottomTabNav from '../routes/BottomTabNavigator';
+import BottomTabNav from './BottomTabNavigator';
 import GooglePlacesInput from '../screens/Google Maps/GooglePlacesTest';
-
-import {
-  AsyncStorage,
-  Button,
-  Text,
-  TextInput,
-  View,
-  StyleSheet,
-} from 'react-native';
-
 
 const Stack = createStackNavigator();
 
@@ -59,18 +51,14 @@ export default function Navigation({ navigation }) {
   //   }
   // );
   return (
-
-          <Stack.Navigator initialRouteName="Login">
-          
-          <Stack.Screen name='Home' component={BottomTabNav} />
-          <Stack.Screen name='Login' component={LoginScreen} />
-          <Stack.Screen name="Notification" component={NotificationScreen} />
-          <Stack.Screen name="Map" component={MapScreen} />
-          <Stack.Screen name="GoogleTest" component={GooglePlacesInput} />
-
-        </Stack.Navigator>
-  
+    <Stack.Navigator initialRouteName='Landing'>
+      <Stack.Screen name='Landing' component={Landing} options={{ headerShown: false }} />
+      <Stack.Screen name='Register' component={Register} />
+      <Stack.Screen name='Login' component={LoginScreen} />
+      <Stack.Screen name='Home' component={BottomTabNav} />
+      <Stack.Screen name="Notification" component={NotificationScreen} />
+      <Stack.Screen name="Map" component={MapScreen} />
+      <Stack.Screen name="GoogleTest" component={GooglePlacesInput} />
+    </Stack.Navigator>
   );
 }
-
-// export default Navigation;
