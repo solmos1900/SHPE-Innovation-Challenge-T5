@@ -5,13 +5,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // SCREENS
 // import LoginScreen from '../Screen/login';
 // import LandingScreen from '../Screen/landing';
-import HomeScreen from '../screens/HomeScreen';
-import NotificationScreen from '../screens/NotificationScreen';
+import HomeScreen from '../screens/Home/HomeScreen';
+import NotificationScreen from '../screens/Messages/NotificationScreen';
 import MapScreen from '../screens/MapScreen';
-import GooglePlacesInput from '../screens/GooglePlacesTest';  
-import MapContainer from '../screens/MapContainer';
+import GooglePlacesInput from '../screens/Google Maps/GooglePlacesTest';  
+import MapContainer from '../screens/Google Maps/MapContainer';
 // import { exp } from 'react-native-reanimated';
-import gmapsDirections from '../screens/GoogleDirectionsTest';
+import gmapsDirections from '../screens/Google Directions/GoogleDirectionsTest';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';

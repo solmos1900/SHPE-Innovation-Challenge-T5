@@ -9,7 +9,7 @@ export default class LoginScreen extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.logo}>HeyAPP</Text>
+        <Text style={styles.logo}>EasyHealth</Text>
         <View style={styles.inputView} >
           <TextInput  
             style={styles.inputText}

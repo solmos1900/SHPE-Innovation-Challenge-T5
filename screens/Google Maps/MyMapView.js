@@ -1,6 +1,6 @@
 import React from 'react';
 import MapView from 'react-native-maps';
-import GlobalStyles from '../routes/Global Styles/GlobalStyles';
+import GlobalStyles from '../../Global Styles/GlobalStyles';
 import { SafeAreaView } from "react-native";
 const MyMapView = (props)=>{
     return(

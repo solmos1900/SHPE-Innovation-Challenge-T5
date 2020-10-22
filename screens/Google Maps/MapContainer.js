@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import GooglePlacesInput from '../screens/GooglePlacesTest';
+import GooglePlacesInput from './GooglePlacesTest';
 import MyMapView from './MyMapView';
-import { getLocation, geocodeLocationByName } from '../routes/Services/location-service';
-import GlobalStyles from '../routes/Global Styles/GlobalStyles';
+import { getLocation, geocodeLocationByName } from './Services/location-service';
+import GlobalStyles from '../../Global Styles/GlobalStyles';
 import { SafeAreaView } from "react-native";
 
 class MapContainer extends React.Component {
