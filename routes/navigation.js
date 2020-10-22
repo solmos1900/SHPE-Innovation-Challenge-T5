@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from '../Screen/login';
-import LandingScreen from '../Screen/landing';
+import LoginScreen from '../screens/login';
+// import LandingScreen from '../Screen/landing';
 //import HomeScreen from '../Screen/HomeScreen';
-import NotificationScreen from '../Screen/NotificationScreen';
-import MapScreen from '../Screen/MapScreen';
-import SettingScreen from '../Screen/SettingsScreen';
+import NotificationScreen from '../screens/NotificationScreen';
+import MapScreen from '../screens/MapScreen';
 import BottomTabNav from '../routes/BottomTabNavigator';
+import GooglePlacesInput from '../screens/GooglePlacesTest';
 
 import {
   AsyncStorage,
@@ -17,6 +17,7 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
+
 
 const Stack = createStackNavigator();
 
@@ -58,21 +59,17 @@ export default function Navigation({ navigation }) {
   //   }
   // );
   return (
-    // <NavigationContainer>
 
-    
-  
-    
-        <Stack.Navigator initialRouteName="Login">
+          <Stack.Navigator initialRouteName="Login">
           
           <Stack.Screen name='Home' component={BottomTabNav} />
           <Stack.Screen name='Login' component={LoginScreen} />
           <Stack.Screen name="Notification" component={NotificationScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
-          <Stack.Screen name="Settings" component={SettingScreen} />
+          <Stack.Screen name="GoogleTest" component={GooglePlacesInput} />
 
         </Stack.Navigator>
-    // </NavigationContainer>
+  
   );
 }
 

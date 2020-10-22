@@ -3,14 +3,15 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // SCREENS
-import LoginScreen from '../Screen/login';
-import LandingScreen from '../Screen/landing';
-import HomeScreen from '../Screen/HomeScreen';
-import NotificationScreen from '../Screen/NotificationScreen';
-import MapScreen from '../Screen/MapScreen';
-import SettingScreen from '../Screen/SettingsScreen';
-import { exp } from 'react-native-reanimated';
-
+// import LoginScreen from '../Screen/login';
+// import LandingScreen from '../Screen/landing';
+import HomeScreen from '../screens/HomeScreen';
+import NotificationScreen from '../screens/NotificationScreen';
+import MapScreen from '../screens/MapScreen';
+import GooglePlacesInput from '../screens/GooglePlacesTest';  
+import MapContainer from '../screens/MapContainer';
+// import { exp } from 'react-native-reanimated';
+// import gmapsDirections from '../Screens/GoogleDirectionsTest';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -18,6 +19,7 @@ const INITIAL_ROUTE_NAME = 'Home';
 const BottomTabNav = ({ navigation, route }) => {
   return (
     <BottomTab.Navigator headerMode="none">
+
       <BottomTab.Screen
         name='Home'
         component={HomeScreen}
@@ -28,11 +30,32 @@ const BottomTabNav = ({ navigation, route }) => {
         //   )
         }}
       />
+
+      {/* <BottomTab.Screen
+        name='Direcitons'
+        component={gmapsDirections}
+        options={{
+          title: 'directions',
+        //   tabBarIcon: ({ focused }) => (
+        //     <TabBarIcon focused={focused} name='home' />
+        //   )
+        }}
+      /> */}
       <BottomTab.Screen
         name='Map'
         component={MapScreen}
         options={{
           title: 'Map',
+        //   tabBarIcon: ({ focused }) => (
+        //     <TabBarIcon focused={focused} name='home' />
+        //   )
+        }}
+      />
+       <BottomTab.Screen
+        name='MapCont'
+        component={MapContainer}
+        options={{
+          title: 'Map C',
         //   tabBarIcon: ({ focused }) => (
         //     <TabBarIcon focused={focused} name='home' />
         //   )
@@ -44,6 +67,16 @@ const BottomTabNav = ({ navigation, route }) => {
         component={NotificationScreen}
         options={{
           title: 'Notifications',
+        //   tabBarIcon: ({ focused }) => (
+        //     <TabBarIcon focused={focused} name='home' />
+        //   )
+        }}
+      />
+      <BottomTab.Screen
+        name='GoogleTest'
+        component={GooglePlacesInput}
+        options={{
+          title: 'GoogleTest',
         //   tabBarIcon: ({ focused }) => (
         //     <TabBarIcon focused={focused} name='home' />
         //   )
