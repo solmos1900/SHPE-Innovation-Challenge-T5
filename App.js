@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Navigation from './routes/navigation';
+import Navigation from './routes/StackNavigation';
 
 // export default App = () => {
 //   return (
