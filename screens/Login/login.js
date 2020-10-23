@@ -33,10 +33,10 @@ export default class LoginScreen extends React.Component {
          style={styles.loginBtn}
          onPress={() => { 
             const prop = {
-              email: email,
-              password: password
+              email: this.props.email,
+              password: this.props.password
             }
-            logining(prop);
+            // logining(prop);
             this.props.navigation.navigate('Home')}
           }
          >

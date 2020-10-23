@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { TextInput, Button, View } from 'react-native';
 import { useState } from 'react';
 import HealthFlatList from './HealthFlatList';
+import { posting, displaying } from './utils';
+
 global.calories = 0;
 global.names =[]
 // function Search(text) {
@@ -19,9 +21,8 @@ global.names =[]
 //       });
 //   }
 
-function Search(text) {
-
-    return fetch(`http://192.168.0.33:8000/v1/nutriologist/food/nutrition/${text}`)
+const search = async (text) => {
+  return await fetch(`http://192.168.0.33:8000/v1/nutriologist/food/nutrition/${text}`)
     .then((response) => response.json())
     .then((json) => {
       global.names.push(text);
@@ -29,12 +30,13 @@ function Search(text) {
     })
     .catch((error) => {
       console.error(error);
-    });
-
+  });
 }
+
 const HealthSearch = () => {
-    const [text, setText] = useState('');
-    const[calories, setCalories]= useState(0);
+  const [text, setText] = useState('');
+  const[calories, setCalories]= useState(0);
+
   return (
     <View style={{padding: 10}}>      
       <TextInput
@@ -47,8 +49,9 @@ const HealthSearch = () => {
       <Button 
         title="Search"
         onPress={() => {
-          Search(text)
-          setCalories(global.calories)
+          search(text);
+          setCalories(global.calories);
+          posting(calories);
       }}/>
       
       <HealthFlatList/>     
