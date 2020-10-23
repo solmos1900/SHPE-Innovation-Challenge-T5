@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { TextInput, Button, View } from 'react-native';
+import {View,TextInput, TouchableOpacity, Button, Text,Platform, StatusBar, Slider,StyleSheet,Image} from 'react-native'
 import { useState } from 'react';
 import HealthFlatList from './HealthFlatList';
 import { posting, displaying } from './utils';
+import { SafeAreaView } from 'react-navigation';
 
 global.calories = 0;
 global.names =[]
@@ -38,7 +39,7 @@ const HealthSearch = () => {
   const[calories, setCalories]= useState(0);
 
   return (
-    <View style={{padding: 10}}>      
+    <SafeAreaView style={styles.AndroidSafeArea}>      
       <TextInput
         style={{height: 40}}
         placeholder="Type here to Start Tracking Calories"
@@ -55,8 +56,34 @@ const HealthSearch = () => {
       }}/>
       
       <HealthFlatList/>     
-    </View>
+    </SafeAreaView>
   );
 }
 
+
+const styles = StyleSheet.create({
+  avatar: {
+    width: 140,
+    height: 140,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: "#FFFFFF",
+    marginBottom:10,
+  },
+  image:{
+    width: 60,
+    height: 60,
+  },
+  headerContent:{
+      padding:30,
+      alignItems: 'center',
+    },
+    AndroidSafeArea: {
+      flex: 1,
+      backgroundColor: "white",
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    },
+  
+});
 export default HealthSearch;
+

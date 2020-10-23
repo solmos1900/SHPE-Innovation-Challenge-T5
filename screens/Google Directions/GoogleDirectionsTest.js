@@ -1,7 +1,7 @@
 import getDirections from 'react-native-google-maps-directions'
 import React, {Component} from 'react'
 import {View, Button, StyleSheet} from 'react-native';
-export default class gmapsDirections extends Component {
+export default class GmapsDirections extends Component {
  
   handleGetDirections = () => {
     const data = {
