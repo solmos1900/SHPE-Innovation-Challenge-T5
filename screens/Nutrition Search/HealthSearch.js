@@ -60,4 +60,3 @@ const HealthSearch = () => {
 }
 
 export default HealthSearch;
-
