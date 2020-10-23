@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {View,TextInput, TouchableOpacity, Button, Text,Platform, StatusBar, Slider,StyleSheet,Image} from 'react-native'
+import React, { Component, useEffect } from 'react';
+import {View, TextInput, TouchableOpacity, Button, Text,Platform, StatusBar, Slider,StyleSheet,Image} from 'react-native'
 import { useState } from 'react';
 import HealthFlatList from './HealthFlatList';
 import { posting, displaying } from './utils';
@@ -36,7 +36,12 @@ const search = async (text) => {
 
 const HealthSearch = () => {
   const [text, setText] = useState('');
-  const[calories, setCalories]= useState(0);
+  const [calories, setCalories]= useState(0);
+  const [names, setNames] = useState([]); 
+
+  useEffect(() => {
+    setNames(displaying());
+  }, [])
 
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>      
