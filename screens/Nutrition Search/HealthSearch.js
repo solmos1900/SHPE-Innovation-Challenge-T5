@@ -18,16 +18,14 @@ global.names =[]
 //         console.error(error);
 //       });
 //   }
+
 function Search(text) {
 
     return fetch(`http://192.168.0.33:8000/v1/nutriologist/food/nutrition/${text}`)
     .then((response) => response.json())
     .then((json) => {
-      //return json
-   
-    global.names.push(text);
-    global.calories = json.calories.value+calories
-    
+      global.names.push(text);
+      global.calories = json.calories.value+calories
     })
     .catch((error) => {
       console.error(error);
@@ -35,32 +33,25 @@ function Search(text) {
 
 }
 const HealthSearch = () => {
-    const [text, setText] = useState('')
-    const[calories,setCalories]= useState(0)
+    const [text, setText] = useState('');
+    const[calories, setCalories]= useState(0);
   return (
-
-       <View style={{padding: 10}}>
-          
+    <View style={{padding: 10}}>      
       <TextInput
         style={{height: 40}}
         placeholder="Type here to Start Tracking Calories"
         onChangeText={text => setText(text)}
         defaultValue={text}
       />
-      
-        <Button 
-        title="Search"
-        onPress={() => {Search(text)
-        setCalories(global.calories)
-        }
-    
-    }
 
-        />
-       
-        
-        <HealthFlatList/>
-        
+      <Button 
+        title="Search"
+        onPress={() => {
+          Search(text)
+          setCalories(global.calories)
+      }}/>
+      
+      <HealthFlatList/>     
     </View>
   );
 }
