@@ -51,7 +51,7 @@ const HealthSearch = () => {
         onPress={() => {
           search(text);
           setCalories(global.calories);
-          posting(calories);
+          posting(calories, global.names);
       }}/>
       
       <HealthFlatList/>     
