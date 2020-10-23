@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput, Button, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 
-const Register = () => {
+const Register = ({ navigation }) => {
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -49,13 +49,11 @@ const Register = () => {
           secureTextEntry
         />
 
-        <TouchableOpacity style = {styles.signUpButton}>
-          <Text style = {styles.signUpText}>SIGN UP</Text>
+        <TouchableOpacity style = {styles.signUpButton}
+          onPress={() => {navigation.navigate('Home')}}
+        >
+          <Text style = {styles.signUpText}>Register</Text>
         </TouchableOpacity>
-
-        <View style = {styles.extraOptionsView}>
-          <Button title = "Log In"></Button>
-        </View>
       </ScrollView>
     </SafeAreaView>
   );
