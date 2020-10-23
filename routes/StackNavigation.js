@@ -1,15 +1,21 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-import Landing from '../screens/Landing/scene';
-import Register from '../screens/Register/scene';
 import LoginScreen from '../screens/Login/login';
+// import LandingScreen from '../Screen/landing';
 //import HomeScreen from '../Screen/HomeScreen';
 import NotificationScreen from '../screens/Messages/NotificationScreen';
 import MapScreen from '../screens/MapScreen';
 import BottomTabNav from './BottomTabNavigator';
 import GooglePlacesInput from '../screens/Google Maps/GooglePlacesTest';
+import {
+  AsyncStorage,
+  Button,
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+} from 'react-native';
 
 const Stack = createStackNavigator();
 
