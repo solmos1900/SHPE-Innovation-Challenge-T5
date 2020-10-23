@@ -1,10 +1,11 @@
 import firebase from '../../configs/firebase';
 
-export const posting = async (calories) => {
+export const posting = async (calories,names) => {
   await firebase.firestore()
     .collection('users').doc(firebase.auth().currentUser.uid)
       .set({
-        calories: calories
+        calories: calories,
+        names: names
       });
 }
 

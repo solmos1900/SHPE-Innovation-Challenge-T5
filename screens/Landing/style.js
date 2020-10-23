@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'green',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: "row"
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     width: 125,
     height: 125,
     margin: 20,
-    backgroundColor: 'green',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     elevation: 2,                             //Android
   },
   text: {
-    color: "#FFFFFF",
+    color: 'green',
     padding: 13,
     fontSize: 25,
   }
