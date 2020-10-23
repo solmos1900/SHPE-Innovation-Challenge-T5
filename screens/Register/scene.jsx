@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, TextInput, Button, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import registering from './util';
 import styles from './styles';
 
 const Register = ({ navigation }) => {
@@ -50,7 +51,18 @@ const Register = ({ navigation }) => {
         />
 
         <TouchableOpacity style = {styles.signUpButton}
-          onPress={() => {navigation.navigate('Home')}}
+          onPress={() => {
+            navigation.navigate('Home')
+            
+            const prop = {
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              username: username,
+              password: password
+            }
+            registering(prop);
+          }}
         >
           <Text style = {styles.signUpText}>Register</Text>
         </TouchableOpacity>
