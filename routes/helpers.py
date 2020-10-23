@@ -6,13 +6,14 @@ import json, sys
 from pprint import pprint
 
 def get_id(food):    
-
-    url = "https://api.nal.usda.gov/fdc/v1/foods/list/?query=".format(item = str(food))
-
+    pprint(food)
+    url = "https://api.nal.usda.gov/fdc/v1/foods/list/?query={item}".format(item = str(food))
     payload = {}
     headers = {
     'x-api-key': 'yJyIE6JtzBajb4lLRIg35BvHSQLqgJivUphuqo4i'
     }
+    pprint(url)
+
     response = requests.request("GET", url, headers=headers, data = payload)
     data = response.json()
     
@@ -150,4 +151,6 @@ def get_serving_size(fdc_id):
 
 if __name__ == '__main__':
 
-    get_nutrient(763004)
+    x = get_id("oreo")
+    pprint(x)
+    pprint(get_nutrient(x))
