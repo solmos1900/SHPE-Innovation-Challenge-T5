@@ -17,7 +17,6 @@ import {
   StyleSheet,
 } from 'react-native';
 
-
 const Stack = createStackNavigator();
 
 function SplashScreen() {
@@ -58,18 +57,14 @@ export default function Navigation({ navigation }) {
   //   }
   // );
   return (
-
-          <Stack.Navigator initialRouteName="Login">
-          
-          <Stack.Screen name='Home' component={BottomTabNav} />
-          <Stack.Screen name='Login' component={LoginScreen} />
-          <Stack.Screen name="Notification" component={NotificationScreen} />
-          <Stack.Screen name="Map" component={MapScreen} />
-          <Stack.Screen name="GoogleTest" component={GooglePlacesInput} />
-
-        </Stack.Navigator>
-  
+    <Stack.Navigator initialRouteName='Landing'>
+      <Stack.Screen name='Landing' component={Landing} options={{ headerShown: false }} />
+      <Stack.Screen name='Register' component={Register} />
+      <Stack.Screen name='Login' component={LoginScreen} />
+      <Stack.Screen name='Home' component={BottomTabNav} options={{ headerShown: false }} />
+      <Stack.Screen name="Notification" component={NotificationScreen} />
+      <Stack.Screen name="Map" component={MapScreen} />
+      <Stack.Screen name="GoogleTest" component={GooglePlacesInput} />
+    </Stack.Navigator>
   );
 }
-
-// export default Navigation;
