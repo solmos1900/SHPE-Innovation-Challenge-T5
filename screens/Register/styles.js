@@ -1,38 +1,41 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'green'
+  },
   signInView: {
     marginTop: 80,
   },
   logoView: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
     marginBottom: 75,
   },
   extraOptionsView: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
   userView: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   textInput: {
-    color: "black",
+    color: 'black',
     fontSize: 20,
     margin: 20,
     marginTop: 5,
     marginBottom: 5,
     padding: 10,
-    borderWidth: 2,
-    borderColor: "#F7B600",
+    borderWidth: 1,
+    backgroundColor: 'white',
     borderRadius: 10,
   },
   signUpButton: {
-    backgroundColor: '#1A1F71',
+    backgroundColor: 'white',
     margin: 20,
     marginTop: 25,
     alignItems: 'center',
@@ -44,34 +47,34 @@ const styles = StyleSheet.create({
     elevation: 2,                             //Android
   },
   signUpText: {
-    color: "#FFFFFF",
+    color: 'black',
     padding: 13,
     fontSize: 25,
   }, 
-  visaTouchlessText: {
+  title: {
     paddingLeft: 5,
     fontSize: 50,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#1a1F71"
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: 'white'
   },
-  visaWordLogo:{
+  visaWordLogo: {
     width: 114,
     height: 38,
-    alignSelf: "center",
+    alignSelf: 'center',
   },
-  visaTouchlessLogo:{
+  visaTouchlessLogo: {
     width: 348,
     height: 204,
-    alignSelf: "center",
+    alignSelf: 'center',
     marginTop: 50,
     marginBottom: 30,
   },
   QRLogo: {
     width: 88,
     height: 68,
-    alignSelf: "center",
-  },
+    alignSelf: 'center',
+  }
 });
 
 export default styles;

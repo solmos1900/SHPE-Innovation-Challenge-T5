@@ -15,7 +15,7 @@ const Register = ({ navigation }) => {
     <SafeAreaView style = {styles.container}>
       <ScrollView>
         <View style = {styles.logoView}>
-          <Text style = {styles.visaTouchlessText}>Touchless</Text>
+          <Text style = {styles.title}>Easy Healthy</Text>
         </View>
          <TextInput style = {styles.textInput}
           placeholder='First Name'
