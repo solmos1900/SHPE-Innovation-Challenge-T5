@@ -1,55 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import logining from './util';
 
-export default class LoginScreen extends React.Component {
-  state={
-    email:"",
-    password:""
-  }
-  render(){
-    return (
-      <View style={styles.container}>
-        <Text style={styles.logo}>EasyHealth</Text>
-        <View style={styles.inputView} >
-          <TextInput  
-            style={styles.inputText}
-            placeholder="Email..." 
-            placeholderTextColor="#003f5c"
-            onChangeText={text => this.setState({email:text})}/>
-        </View>
-        <View style={styles.inputView} >
-          <TextInput  
-            secureTextEntry
-            style={styles.inputText}
-            placeholder="Password..." 
-            placeholderTextColor="#003f5c"
-            onChangeText={text => this.setState({password:text})}/>
-        </View>
-        <TouchableOpacity>
-          <Text style={styles.forgot}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-         style={styles.loginBtn}
-         onPress={() => { 
-            const prop = {
-              email: this.props.email,
-              password: this.props.password
-            }
-            // logining(prop);
-            this.props.navigation.navigate('Home')}
-          }
-         >
-          <Text style={styles.loginText}>LOGIN</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.loginText}>Signup</Text>
-        </TouchableOpacity>
+const Login = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo}>EasyHealth</Text>
+
+      <View style={styles.inputView} >
+        <TextInput  
+          style={styles.inputText}
+          placeholder="Email..." 
+          placeholderTextColor="#003f5c"
+          onChangeText={text => setEmail(text)}/>
       </View>
-    );
-  }
+
+      <View style={styles.inputView} >
+        <TextInput  
+          secureTextEntry
+          style={styles.inputText}
+          placeholder="Password..." 
+          placeholderTextColor="#003f5c"
+          onChangeText={text => setPassword(text)}/>
+      </View>
+
+      <TouchableOpacity>
+        <Text style={styles.forgot}>Forgot Password?</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.loginBtn}
+        onPress={() => { 
+          const prop = {
+            email: email,
+            password: password
+          }
+          logining(prop);
+          navigation.navigate('Home')}
+        }
+      >
+        <Text style={styles.loginText}>LOGIN</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Text style={styles.loginText}>Signup</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -96,6 +96,8 @@ const styles = StyleSheet.create({
     color:"white"
   }
 });
+
+export default Login;
 
 
 
