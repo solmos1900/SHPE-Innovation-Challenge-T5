@@ -8,7 +8,6 @@ import NotificationScreen from '../screens/Messages/NotificationScreen';
 import MapScreen from '../screens/MapScreen';
 import BottomTabNav from '../routes/BottomTabNavigator';
 import GooglePlacesInput from '../screens/Google Maps/GooglePlacesTest';
-
 import {
   AsyncStorage,
   Button,

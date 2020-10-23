@@ -11,7 +11,9 @@ import MapScreen from '../screens/MapScreen';
 import GooglePlacesInput from '../screens/Google Maps/GooglePlacesTest';  
 import MapContainer from '../screens/Google Maps/MapContainer';
 // import { exp } from 'react-native-reanimated';
-import gmapsDirections from '../screens/Google Directions/GoogleDirectionsTest';
+// import gmapsDirections from '../screens/Google Directions/GoogleDirectionsTest';
+// import TestApp from '../screens/Nutrition Tracking/TextInput';
+import HealthSearch from '../screens/Nutrition Search/HealthSearch';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -32,10 +34,10 @@ const BottomTabNav = ({ navigation, route }) => {
       />
 
       <BottomTab.Screen
-        name='Direcitons'
-        component={gmapsDirections}
+        name='HealthSearch'
+        component={HealthSearch}
         options={{
-          title: 'directions',
+          title: 'Search',
         //   tabBarIcon: ({ focused }) => (
         //     <TabBarIcon focused={focused} name='home' />
         //   )
