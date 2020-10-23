@@ -9,7 +9,7 @@ const Item = ({ title }) => (
   </View>
 );
 
-const HealthFlatList = () => {
+const HealthFlatList = (prop) => {
   const renderItem = ({ item }) => (
     <Item title={item} />
   );
@@ -18,7 +18,7 @@ const HealthFlatList = () => {
     <ScrollView >
       <Text>Total Calories:{global.calories}</Text>
       <FlatList
-        data={global.names}
+        data={prop.names}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />

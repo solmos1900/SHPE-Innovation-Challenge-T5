@@ -57,10 +57,11 @@ const HealthSearch = () => {
         onPress={() => {
           search(text);
           setCalories(global.calories);
+          setNames([...names, global.names]);
           posting(calories, global.names);
       }}/>
       
-      <HealthFlatList/>     
+      <HealthFlatList item={names}/>     
     </SafeAreaView>
   );
 }
